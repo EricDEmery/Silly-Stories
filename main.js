@@ -1,8 +1,6 @@
 const customName = document.getElementById('customname');
 const randomize = document.querySelector('.randomize');
 const story = document.querySelector('.story');
-const mainCharacter = document.getElementById('maincharacter')
-const storyLocation = document.getElementById('storylocation')
 
 function randomValueFromArray(array) {
     const random = Math.floor(Math.random() * array.length);
@@ -22,23 +20,13 @@ const xItem = randomValueFromArray(insertX);
 const yItem = randomValueFromArray(insertY);
 const zItem = randomValueFromArray(insertZ);
 
-newStory = newStory.replaceAll('insertx', xItem);
-newStory = newStory.replaceAll('inserty', yItem);
-newStory = newStory.replaceAll('insertz', zItem);
+newStory = newStory.replaceAll(':insertx:', xItem);
+newStory = newStory.replaceAll(':inserty:', yItem);
+newStory = newStory.replaceAll(':insertz:', zItem);
 
     if (customName.value !== '') {
         const name = customName.value;
-        newStory = newStory.replace('Bob', name);
-    }
-
-    if(mainCharacter.value !== '') {
-        const main = mainCharacter.value;
-        newStory = newStory.replace(xItem, main);
-    }
-
-    if(storyLocation.value !== '') {
-        const location = storyLocation.value;
-        newStory = newStory.replace(yItem, Location);
+        newStory = newStory.replace('xItem', name);
     }
 
     if (document.getElementById("uk").checked) {
